@@ -19,5 +19,7 @@
   "auth.form.error.password": "Debe tener entre 6-12 caracteres con al menos 1 número y 1 caracter especial",
   "auth.form.passwordAgain": "Confirmar contraseña",
   "auth.form.error.passwordAgain": "Las contraseñas deben coincidir",
-  "auth.form.showPasswords": "Mostrar contraseñas"
+  "auth.form.showPasswords": "Mostrar contraseñas",
+  "user1.form.email": "Ingresa tu email"
+  
 }

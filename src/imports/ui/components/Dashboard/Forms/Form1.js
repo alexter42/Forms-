@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-export default class Example extends React.Component {
+export default class Form1 extends React.Component {
   render() {
     return (
       <Form>
@@ -70,11 +71,7 @@ export default class Example extends React.Component {
             </Label>
           </FormGroup>
         </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="checkbox" /> Check me out
-          </Label>
-        </FormGroup>
+
         <Button>Submit</Button>
       </Form>
     );

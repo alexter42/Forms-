@@ -19,5 +19,6 @@
   "auth.form.error.password": "Must be between 6-12 characters with at least 1 number and 1 special character",
   "auth.form.passwordAgain": "Confirm password",
   "auth.form.error.passwordAgain": "Passwords must match",
-  "auth.form.showPasswords": "Show passwords"
+  "auth.form.showPasswords": "Show passwords",
+  "user1.form.email": "Email"
 }

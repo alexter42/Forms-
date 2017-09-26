@@ -1,6 +1,7 @@
 import Header from './Header';
 import Body from './formsRouter';
 import { Row, Col, Card, CardHeader } from 'reactstrap';
+import { FormattedMessage } from 'react-intl';
 
 const Forms = () =>
   <div
@@ -24,7 +25,9 @@ const Forms = () =>
             marginTop: `${60}px`,
           }}
         >
-          <CardHeader>Chart showing something</CardHeader>
+          <CardHeader>
+            <FormattedMessage id="auth.button.signIn.title" />
+          </CardHeader>
           <Body />
         </Card>
       </Col>
