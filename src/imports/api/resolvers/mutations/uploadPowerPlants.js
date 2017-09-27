@@ -2,8 +2,6 @@ import PowerPlants from '../../collections/powerPlants';
 import fs from 'fs';
 import d3 from 'd3';
 
-import nationalData from '../../../ui/data/nationalData';
-
 export default function uploadPowerPlants(root, { file }) {
   let data = fs.readFileSync(file.path, 'utf-8', (err, d) => {
     if (err) {
@@ -29,7 +27,7 @@ export default function uploadPowerPlants(root, { file }) {
   let allData = { name: filename, rows: rows, columns: columns };
 
   let arrayData = [];
-  let country = nationalData(allData);
+  let country = allData;
 
   Object.entries(country.balancingAreas).forEach(([key, value]) => {
     let capacities = value.properties.capacity.break_down;

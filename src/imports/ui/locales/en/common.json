@@ -20,5 +20,5 @@
   "auth.form.passwordAgain": "Confirm password",
   "auth.form.error.passwordAgain": "Passwords must match",
   "auth.form.showPasswords": "Show passwords",
-  "user1.form.email": "Email"
+  "user.form.title": "Form 1"
 }

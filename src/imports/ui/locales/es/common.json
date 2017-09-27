@@ -20,6 +20,6 @@
   "auth.form.passwordAgain": "Confirmar contraseña",
   "auth.form.error.passwordAgain": "Las contraseñas deben coincidir",
   "auth.form.showPasswords": "Mostrar contraseñas",
-  "user1.form.email": "Ingresa tu email"
+  "user.form.title": "Formulari 1"
   
 }

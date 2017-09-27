@@ -1,79 +1,177 @@
 import React from 'react';
 
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Col, Card, CardHeader } from 'reactstrap';
+import { FormattedMessage } from 'react-intl';
 
 export default class Form1 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      values: {
+        age: '',
+        sex: '',
+        gender: '',
+        birthPlace: '',
+        neighborhood: '',
+        education: '',
+        ocupation: '',
+        language: '',
+        usersRelationship: '',
+      },
+    };
+  }
+
+  onChange = target => {
+    console.log(target.value, target.name);
+    let newValues = Object.assign({}, this.state.values);
+
+    newValues[target.name] = target.value;
+
+    this.setState({ values: newValues });
+  };
+
   render() {
     return (
-      <Form>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input
-            type="password"
-            name="password"
-            id="examplePassword"
-            placeholder="password placeholder"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelect">Select</Label>
-          <Input type="select" name="select" id="exampleSelect">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelectMulti">Select Multiple</Label>
-          <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleText">Text Area</Label>
-          <Input type="textarea" name="text" id="exampleText" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleFile">File</Label>
-          <Input type="file" name="file" id="exampleFile" />
-          <FormText color="muted">
-            This is some placeholder block-level help text for the above input. It's a bit lighter
-            and easily wraps to a new line.
-          </FormText>
-        </FormGroup>
-        <FormGroup tag="fieldset">
-          <legend>Radio Buttons</legend>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" /> Option one is this and that—be sure to include
-              why it's great
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" /> Option two can be something else and selecting it
-              will deselect option one
-            </Label>
-          </FormGroup>
-          <FormGroup check disabled>
-            <Label check>
-              <Input type="radio" name="radio1" disabled /> Option three is disabled
-            </Label>
-          </FormGroup>
-        </FormGroup>
-
-        <Button>Submit</Button>
-      </Form>
+      <Col xs="12" sm="12" lg="12">
+        <Card
+          style={{
+            height: `${20}%`,
+            width: `${80}%`,
+            margin: 'auto',
+            marginTop: `${60}px`,
+            padding: `${30}px`,
+          }}
+        >
+          <CardHeader
+            style={{
+              marginBottom: `${20}px`,
+            }}
+          >
+            {'Persona'}
+          </CardHeader>
+          <Form inline>
+            <FormGroup>
+              <Input
+                type="number"
+                placeholder="Age"
+                name="age"
+                id="age"
+                defaultValue="root"
+                onChange={e => this.onChange(e.target)}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Input type="select" name="sex" id="sex" onChange={e => this.onChange(e.target)}>
+                <option>Masculino</option>
+                <option>Femenino</option>
+              </Input>
+            </FormGroup>
+            <FormGroup>
+              <Input
+                type="select"
+                name="sex"
+                id="exampleSelect"
+                onChange={e => this.onChange(e.target)}
+              >
+                <option>Heterosexual</option>
+                <option>Homosexual</option>
+                <option>Bisexual</option>
+              </Input>
+            </FormGroup>
+          </Form>
+        </Card>
+        <Card
+          style={{
+            height: `${80}%`,
+            width: `${80}%`,
+            margin: 'auto',
+            marginTop: `${20}px`,
+            padding: `${30}px`,
+          }}
+        >
+          <CardHeader
+            style={{
+              marginBottom: `${20}px`,
+            }}
+          >
+            {'Geodata'}
+          </CardHeader>
+          <Form>
+            <FormGroup>
+              <Label for="exampleSelect">Birth Place</Label>
+              <Input
+                type="select"
+                name="birthPlace"
+                id="exampleSelect"
+                onChange={e => this.onChange(e.target)}
+              >
+                <option>Aguascalientes</option>
+                <option>Morelos</option>
+                <option>Sinaloa</option>
+                <option>Tabasco</option>
+                <option>Campeche</option>
+              </Input>
+            </FormGroup>
+            <Label for="exampleSelect">Residence</Label>
+            <FormGroup>
+              <Label for="exampleEmail">Country</Label>
+              <Input
+                type="select"
+                name="country"
+                id="exampleEmail"
+                placeholder="Country"
+                onChange={e => this.onChange(e.target)}
+              >
+                <option>Mexico</option>
+              </Input>
+            </FormGroup>{' '}
+            <FormGroup>
+              <Label for="exampleEmail">State</Label>
+              <Input
+                type="select"
+                name="state"
+                id="exampleSelect"
+                onChange={e => this.onChange(e.target)}
+              >
+                <option>Aguascalientes</option>
+                <option>Morelos</option>
+                <option>Sinaloa</option>
+                <option>Tabasco</option>
+                <option>Campeche</option>
+              </Input>{' '}
+            </FormGroup>{' '}
+            <FormGroup>
+              <Label for="exampleEmail">City</Label>
+              <Input
+                type="select"
+                name="city"
+                id="exampleSelect"
+                onChange={e => this.onChange(e.target)}
+              >
+                <option>Ciudad de Mexico</option>
+              </Input>{' '}
+            </FormGroup>{' '}
+            <FormGroup>
+              <Label for="examplePassword">Neighborhood</Label>
+              <Input
+                type="select"
+                name="neighborhood"
+                id="examplePassword"
+                placeholder="Neighborhood"
+                onChange={e => this.onChange(e.target)}
+              >
+                <option>Álvaro Obregón</option>
+                <option>Azcapotzalco</option>
+                <option>Venustiano Carranza</option>
+                <option>Tláhuac</option>
+              </Input>
+            </FormGroup>{' '}
+          </Form>
+          <Button color="primary" onClick={() => console.log(this.state.values)}>
+            Pasar con usuario2
+          </Button>
+        </Card>
+      </Col>
     );
   }
 }
