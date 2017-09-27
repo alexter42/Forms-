@@ -30,20 +30,20 @@ export default class Form1 extends React.Component {
   };
 
   onClick = () => {
-    console.log(this.state.values);
+    console.log(this.state.values.age);
     console.log(this.props);
 
     let Transmitter = {
-      age: 12,
-      birthPlace: 'String!',
-      street: 'String!',
-      education: 'String',
-      city: 'String!',
-      state: 'String',
-      sex: 'String',
-      hometown: 'String',
-      ocupation: 'String',
-      gender: 'String',
+      age: this.state.values.age,
+      birthPlace: this.state.values.birthPlace,
+      street: this.state.values.street,
+      education: this.state.values.education,
+      city: this.state.values.city,
+      state: this.state.values.state,
+      sex: this.state.values.sex,
+      hometown: this.state.values.hometown,
+      ocupation: this.state.values.ocupation,
+      gender: this.state.values.gender,
     };
 
     let Receiver = {
