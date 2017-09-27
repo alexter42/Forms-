@@ -1,6 +1,7 @@
 import User from './types/user';
 
 const Mutation = `
+
 input UserProfileInput {
   firstName: String!
   lastName: String!
@@ -21,19 +22,47 @@ input FileInput {
 }
 
 
+input Transmitter {
+  age: Int
+  birthPlace: String
+  street: String
+  education: String
+  city: String
+  state: String
+  sex: String
+  hometown: String
+  ocupation: String
+  gender: String
+}
+
+input Receiver {
+  age: Int
+  birthPlace: String
+  street: String
+  education: String
+  city: String!
+  state: String
+  sex: String
+  hometown: String
+  ocupation: String
+  gender: String
+}
+
+
+input ConversationData {
+  transmitter: Transmitter
+  receiver: Receiver
+}
+
+
 type Mutation {
   # User 
   updateUserAvatar(avatar: FileInput!, userId: ID): User
   updateEmail(email: String!, userId: ID): User
   updateUserProfile(profile: UserProfileInput, userId: ID): User  
 
-  
-  
-  # Files
-  uploadFile(file : FileInput): JSON
-  uploadPowerPlants(file : FileInput): JSON
-  uploadTransmissionLines(file : FileInput): JSON
-  uploadProjectInfo(file : FileInput): JSON
+  # Conversations
+  uploadConversationData(conversation : ConversationData): JSON
 
 }
 `;

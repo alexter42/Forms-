@@ -1,5 +1,5 @@
 import { Col } from 'reactstrap';
-import Form1 from '/imports/ui/components/Dashboard/Forms/Form1';
+import Form1 from '/imports/ui/containers/Dashboard/Forms/FormContainer';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 

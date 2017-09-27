@@ -1,16 +1,10 @@
 import { Roles } from 'meteor/nicolaslopezj:roles';
 import me from './me';
 import user from './user';
-import files from './files';
-import getPowerPlants from './getPowerPlants';
-import getTransmissionLines from './getTransmissionLines';
-import getProjectInfo from './getProjectInfo';
+import getConversationsData from './getConversationsData';
 
 export default {
-  files,
-  getTransmissionLines,
-  getProjectInfo,
-  getPowerPlants,
+  getConversationsData,
   me,
   @Roles.action('viewUser') user,
 };

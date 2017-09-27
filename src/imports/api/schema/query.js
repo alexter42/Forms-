@@ -4,10 +4,7 @@ const Query = `
   type Query {
     me: User
     user(_id: ID!): User
-    files: [JSON]
-    getPowerPlants: [JSON]
-    getTransmissionLines: [JSON]
-    getProjectInfo: [JSON]
+    getConversationsData: [JSON]
   }
 `;
 export default () => [Query, User];

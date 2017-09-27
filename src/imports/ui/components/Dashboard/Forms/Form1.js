@@ -11,11 +11,11 @@ export default class Form1 extends React.Component {
         age: '',
         sex: '',
         gender: '',
-        birthPlace: '',
-        neighborhood: '',
+        language: '',
         education: '',
         ocupation: '',
-        language: '',
+        birthPlace: '',
+        neighborhood: '',
         usersRelationship: '',
       },
     };
@@ -26,10 +26,48 @@ export default class Form1 extends React.Component {
     let newValues = Object.assign({}, this.state.values);
 
     newValues[target.name] = target.value;
-
     this.setState({ values: newValues });
   };
 
+  onClick = () => {
+    console.log(this.state.values);
+    console.log(this.props);
+
+    let Transmitter = {
+      age: 12,
+      birthPlace: 'String!',
+      street: 'String!',
+      education: 'String',
+      city: 'String!',
+      state: 'String',
+      sex: 'String',
+      hometown: 'String',
+      ocupation: 'String',
+      gender: 'String',
+    };
+
+    let Receiver = {
+      age: 13,
+      birthPlace: 'String!',
+      street: 'String!',
+      education: 'String',
+      city: 'String!',
+      state: 'String',
+      sex: 'String',
+      hometown: 'String',
+      ocupation: 'String',
+      gender: 'String',
+    };
+
+    let conversation = {
+      transmitter: Transmitter,
+      receiver: Receiver,
+    };
+
+    console.log(conversation);
+
+    this.props.handleConversationData(conversation);
+  };
   render() {
     return (
       <Col xs="12" sm="12" lg="12">
@@ -69,7 +107,7 @@ export default class Form1 extends React.Component {
             <FormGroup>
               <Input
                 type="select"
-                name="sex"
+                name="gender"
                 id="exampleSelect"
                 onChange={e => this.onChange(e.target)}
               >
@@ -167,7 +205,7 @@ export default class Form1 extends React.Component {
               </Input>
             </FormGroup>{' '}
           </Form>
-          <Button color="primary" onClick={() => console.log(this.state.values)}>
+          <Button color="primary" onClick={() => this.onClick()}>
             Pasar con usuario2
           </Button>
         </Card>
